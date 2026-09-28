@@ -1,0 +1,4790 @@
+-- css-cascading style sheets
+  css is used to style and design the html webpages
+  without css: plain webpages
+  with css: responsive design,user_friendly interface.
+  examples of websites using css: facebook,insta,netflix,youtube,linkedin
+   css syntax:
+             selector{
+                property:value;
+             }
+        _______________   _____________  _______________________
+
+   example:  h1{
+            color:black;
+            }
+    _______________ _____________ ____________
+    TARGET OF ALL H1 TAGS:
+  example:  <style>
+        h1{
+            color:black;
+            font-size:100px;
+        }
+    </style>
+</head>
+<body>
+    <h1> welcome to digital edify</h1>
+    <h1> python</h1>
+</body> 
+_________________ ___________ ___________
+
+types of css:
+1. inline css
+2.internal css
+3.external css
+
+------1.inline css : css written directly inside the html tag.------
+EXAMPLE:
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css intro</title>
+</head>
+<body>
+    <h1 style="color: red;"">welcome to digital edify </h1>
+    <h1 style="color:blue;"> python</h1>
+</body>
+
+real world uses:quick testing,dynamic styling through javascript,NO recommended for large projects.
+
+------2.internal css : css written inside  <style> </style>-------
+EXAMPLE:
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css intro</title>
+    <style>
+        h1{
+            color:black;
+            font-size:17px;
+        }
+        p{
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>welcome to digital edify </h1>
+    <h1>edify</h1>
+    <p> python</p>
+</body>
+</html>
+
+real world use : small projects,landing pages, practic projects.
+
+--------3.external css : most imp method,css written in separate file--------
+
+h1{
+    color:black;
+}
+p{
+    color:blueviolet;
+    font-size: 10px;
+}
+this file is saved in separate file name is:external.css
+example:
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css intro</title>
+    <link rel="stylesheet" href="external.css">
+</head>
+<body>
+    <h1>welcome to digital edify </h1>
+    <p> python</p>
+</body>
+__________ _____________ _______________________
+
+CSS SELECTORS:
+---1.universal selector: ----
+syntax:
+<style>
+     *{
+    color:red;
+       }
+</style>
+
+EXAMPLE:
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>universal selector</title>
+<style>
+    *{
+        color:red;
+    }
+</style>
+</head>
+<body>
+    <h1>hiiiiii</h1>
+    <p>hellooooo</p>
+    <div>madhuuuu</div>
+</body>
+
+-----2.element selector_targets html tags directly----
+
+EXAMPLE:
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>element selector</title>
+    <style>
+        h1{
+            color:black;
+            font-size:17px;
+        }
+        p{
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>welcome to digital edify </h1>
+    <h1>edify</h1>
+    <p> python</p>
+</body>
+</html>
+
+----3.class selector: most  commonly used selector---
+syntax: .classname
+EXAMPLE:
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class selector</title>
+<style>
+    .title{
+        color:red;
+    }
+    .title1{
+        color:navy;
+    }
+</style>
+</head>
+<body>
+    <h1 class="title">heading1</h1>
+    <p class="title1">paraghaph</p>
+    <div>madhuuuu</div>
+</body>
+------4.id selector-used for unique elements-------
+syntax.#idname
+EXAMPLE:
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>id selector</title>
+<style>
+    #logo{
+        color:maroon;
+        font-family:20px;
+        background-color: yellowgreen;
+    }
+ </style>
+</head>
+<body>
+    <h1 id="logo">heading1</h1>
+    <p id ="logo">paraghaph</p>
+    <div>madhuuuu</div>
+</body>
+--unique sections of website
+<body>
+    <h1 id="logo">heading1</h1>
+    <header id="header"></header>
+    <section id="hero"></section>
+    <footer id="footer"></footer>
+</body>
+
+class                           id
+resuable                       unique
+.classname                     #idname
+multiple elements              one element
+most used                      less used
+
+--------5.group selector-apply same style to multiple elements.---
+syntax:element1,element2,element3{
+    property:value;
+}
+EXAMPLE: 
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>group selector</title>
+<style>
+    h1,p,h2{
+        color:red;
+        font-family:20px;
+        background-color: yellowgreen;
+    }
+ </style>
+</head>
+<body>
+    <h1>heading</h1>
+    <p>paragraph</p>
+    <h2>subheading</h2>
+</body>
+
+_______________ _________ _______________________
+
+Specificity
+Specificity is the mechanism browsers use to decide
+which css rule should be applied when multiple
+rules target the same element.
+
+Example :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Specificity Example</title>
+<style>
+p{
+color: blue;
+}
+p{
+color: red;
+}
+</style>
+</head>
+<body>
+<p>Hello World</p>
+</body>
+</html>
+
+Output:
+Red
+Reason” both selectors have equal specificity
+The last rule wins
+
+
+Specificity priority chart
+Selector type points
+Inline style 1000
+Id selector 100
+Class selector 10
+Attribute selector 10
+Element selector 1
+Universal selector(*) 0
+
+
+Example :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Specificity Example</title>
+<style>
+button{
+background: blue;
+}
+.btn{
+background: green;
+}
+#loginBtn{
+background: red;
+}
+</style>
+</head>
+<body>
+<button id="loginBtn" class ="btn">
+Login
+</button>
+</body>
+</html>
+
+Example : Multiple Classes
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Specificity Example</title>
+<style>
+.text{
+color: blue;
+}
+.highlight{
+color:orange;
+}
+</style>
+</head>
+<body>
+<p class = "text highlight">
+Css Training
+</p>
+</body>
+</html>
+
+
+Example 3:
+Inline Style
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Specificity Example</title>
+<style>
+#demo{
+color: green;
+}
+.text{
+color: blue;
+}
+</style>
+</head>
+<body>
+<p id="demo" class = "text" style="color:red">Learning CSS</p>
+</body>
+</html>
+Inline = highest priority.
+
+
+Example : !important
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Specificity Example</title>
+<style>
+#demo{
+color: green;
+}
+.text{
+color: blue;
+}
+p{
+color: brown !important;
+}
+</style>
+</head>
+<body>
+<p id="demo" class = "text" style="color:red">Learning CSS</p>
+</body>
+</html>
+
+Overrides almost everything.
+Avoid excessive use in projects.
+
+
+CSS cascade
+Cascade?
+Cascade - which rule should be applied.
+Browsers follow:
+1)Importance
+2)Specificity
+3)Source order.
+
+Example :
+!important
+|
+Inline style
+|
+ID
+|
+Class
+|
+Element
+|
+Universal selector.
+___________ ______________ ________________
+
+CSS colors:
+Css colors are used to :
+Text
+Background
+Borders
+Shadows
+Buttons
+Link
+Icons
+Gradients
+
+Without colors , website looks very
+plain and difficult to use.
+
+Css color property:
+Selector{
+Color: value;
+}
+Background color :
+Ways to specify css colors:
+Css supports multiple color formats:
+1)Color names
+2) RGB
+3) RBGA
+4)HEX
+Color names:
+Css provides redefined color names:
+Red
+Blue
+Green
+Brown
+Orange
+Pink
+Example :
+RGB color
+R - red
+G - green
+B - blue
+Each value range
+0 to 255
+Syntax:
+Color: rgb(red,green,blue)
+
+Example :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cascade Example</title>
+<style>
+.red{
+color:rgb(255,0,0)
+}
+.green{
+color:rgb(0,255,0)
+}
+.blue{
+color:rgb(0,0,255)
+}
+</style>
+</head>
+<body>
+<h1 class = "red">RED RGB</h1>
+<h1 class = "green">GREEN RGB</h1>
+<h1 class = "blue">BLUE RGB</h1>
+</body>
+</html>
+
+Rgb color mixing
+Rgb value result
+255,0,0 red
+0,255,0 green
+0,0,255 blue
+255,255,255 white
+0,0,0 black
+255,255,0 yellow
+
+RGBA colors
+Rgba adds ALPHA
+Alpha means transparency
+Syntax:
+rgba(red,green,blue, alpha)
+Alpha range :
+0 - fully transparent
+1 = fully visible
+
+Example :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cascade Example</title>
+<style>
+.box{
+width:300px;
+height: 150px;
+background-color: rgba(255,0,0,0.5);
+}
+</style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>
+
+HEX colors
+Most popular format in frontend dev
+Syntax:
+#RRGGBB
+
+Example :
+#FF0000
+Understanding HEX:
+Hex uses :
+0-9
+A-F
+Example:
+Color HEX
+Red #FF0000
+GREEN #00FF00
+Blue #0000FF
+White #FFFFFF
+Black #000000
+Yellow #FFFF00
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cascade Example</title>
+<style>
+.red{
+color: #FF0000;
+}
+.blue{
+color:#0000FF;
+}
+.green{
+color: #00FF00;
+}
+</style>
+</head>
+<body>
+<h1 class="red">RED HEX</h1>
+<h1 class="blue">BLUE HEX</h1>
+<h1 class="green">GREEN HEX</h1>
+</body>
+</html>
+
+
+Opacity:
+Controls transparency of the entire element.
+Syntax:
+Opacity: value;
+Values:
+Opacity: 0;
+Opacity: 0.5;
+Opacity:1;
+
+Example :
+img{
+opacity:0.9;
+}
+Values from
+0 - 1.
+
+_______ ___________ _________________ _______________
+Box Model
+
+The css box model is the concept that every HTML elements
+is treated as a rectangle box by the browser,
+The box consists of different layers that control:
+>content size
+>internal spacing
+>border
+>external spacing
+Why do we need Box Model?
+>the distance between one element and other elements.
+>the border around it.
+
+Box model structure:
+Every element has 4 parts:
+<!-- Structure of the CSS Box Model -->
++--------------------------------------+
+| MARGIN |
+| +--------------------------------+ |
+| | BORDER | |
+| | +--------------------------+ | |
+| | | PADDING | | |
+| | | +--------------------+ | | |
+| | | | CONTENT | | | |
+| | | +--------------------+ | | |
+| | +--------------------------+ | |
+| +--------------------------------+ |
++--------------------------------------+
+1) Content
+The content area is the actual data inside the element
+Example :
+Text inside a <p>
+Button label
+Heading text
+2)padding
+Padding is the space inside the element , between content
+and the border.
+Why use padding:
+>to avoid the text touching the border.
+3)Border
+Border is the line surrounding the padding and content
+Why use border ?
+>to highlight elements
+>Create input boxes
+>create cards.
+4) Margin
+Margin is the space outside the box.
+>spacing between cards
+>spacing between buttons
+>spacing between fields.
+
+DEFAULT box-sizing:
+box-sizing: content-box;
+This means:
+‘Width and height apply only on the content
+Padding and border are added outside that width/ height.
+Issue:
+.box{
+Width : 300px;
+Padding: 20px;
+Border: 5px solid black;
+}
+Will the total width be 300px?
+NO
+Actual width:
+300 + 20 + 20 + 5 + 5 = 350px
+Because e width applies only to content when using
+content-box.
+Solution:
+Box-sizing, border-box
+When we use :
+Box-sizing: border-box;
+The given width includes:
+> content
+>padding
+>border
+This makes layout easier and more predictable.
+
+Example :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Box Model</title>
+<style>
+*{
+box-sizing:border-box;
+}
+body{
+font-family: Arial, Helvetica, sans-serif;
+background-color: #f4f4f4;
+padding: 30px;
+}
+.card{
+width: 350px;
+background-color: white;
+padding: 20px;
+border: 3px solid black;
+margin: 30px auto;
+border-radius: 10px;
+}
+.card h2{
+margin-bottom: 10px;
+}
+.card p{
+margin-bottom: 15px;
+line-height: 1.6;
+}
+.card button{
+padding:10px 20px;
+border: none;
+background-color: teal;
+color: white;
+border-radius: 5px;
+cursor: pointer;
+}
+</style>
+</head>
+<body>
+<div class="card">
+<h2>CSS BOX MODEL</h2>
+<p>This card demonstrate conetnt, padding , border, and margin
+padding gives space inside, marging gives space outside
+</p>
+<button>Read more</button>
+</div>
+</body>
+</html>
+
+BOX model property list:
+Padding: 20px;
+Padding: 10px 20px;
+Padding: 10px 15px 20px 25px;l
+Padding-top: 10px
+Padding-right: 20px
+Padding-left : 10px
+Padding-bottom: 30px
+Margin
+Margin: 20px
+Margin: 10px 20px
+Margin: 10px 20px 30px 40px
+Margin-top: 10px
+Margin-bottom: 20px
+Margin-left: 30px
+Margin-right: 40px
+Border properties :
+Border: 2px solid black;
+Border-width: 3px;
+Border-style: dashed;
+Border-color: blue;
+    ------------  -------------- ------------
+Display property
+
+The display property defines how an
+element behaves in the layout and how
+It occupies spaces.
+>it tells the browser:
+> should the element start on a new line.
+>should is stay in the same line
+> Can height/width be applied?
+Most important display values:
+Block - starts on new line, takes full available width by
+default, width and height can be applied, margin and padding
+work properly.
+Example :
+Div
+P
+H1 to h6
+Section
+Article
+Inline: stays in the same line, only takes as much width as its
+content.
+
+Example :
+Span
+A
+Strong
+Inline-block:inline-block combines features of both inline and
+block
+None.: completely removes the element from the browser.
+
+Example :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Block Elements</title>
+<style>
+body{
+font-family: Arial, Helvetica, sans-serif;
+padding: 30px;
+}
+.block-box{
+display:block;
+background-color: lightblue;
+margin-bottom: 10px;
+padding: 10px;
+}
+.inline-box{
+display:inline;
+background-color: lightcoral;
+padding: 10px;
+}
+.inline-block-box{
+display:inline-block;
+width: 150px;
+height: 80px;
+background-color: lightgreen;
+margin: 10px;
+padding: 10px;
+}
+</style>
+</head>
+<body>
+<h2>Block Elements</h2>
+<div class="block-box">BLOCK 1</div>
+<div class="block-box">BLOCK 2</div>
+<h2>INLINE Examples</h2>
+<span class="inline-box">INLINE 1</span>
+<span class="inline-box">INLINE 2</span>
+<h2> Inline Block Example</h2>
+<div class="inline-block-box"> Box 1</div>
+<div class="inline-block-box">Box 2</div>
+<div class="inline-block-box">Box 3</div>
+</body>
+</html>
+
+Display: block;
+Starts on new line
+Each- box appears one below another
+Display: inline:
+Elements appears in the same line
+width/ height are not useful here
+Display: inline-block:
+Boxes stay in the same row.
+Width and height work.
+
+ ---------- ------------------ ----------------------
+Position Property
+
+In web design , HTML elements appear somewhere on the
+page.
+By default, elements follow the normal flow - one after
+another from top to bottom.
+Position
+The position property in CSS is used to control how
+elements are positioned in a webpage.
+It tells the browser:
+> should the elements stay in normal flow.
+>should it move from its normal place.
+>should it stick while scrolling.
+Syntax:
+Selector{
+Position: static | relative | absolute | fixed | sticky;
+}
+Values of position:
+Static - default position
+Relative : moves relative to its original position
+Absolute - positioned relative to nearest positioned
+ancestor
+Fixed - positioned relative to the browser viewport
+Sticky - behaves like relative + fixed depending on the
+scroll.
+Example :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Static</title>
+<style>
+.box{
+width: 200px;
+padding: 20px;
+margin : 10px;
+background-color: aqua;
+border: 2px solid black;
+position : static;
+top: 50px; /* will not visisbly reposition the element */
+left: 50px; /* will not visisbly reposition the element */
+}
+</style>
+</head>
+<body>
+<div class="box">I Am a static box</div>
+</body>
+</html>
+Explanation:
+The box remains in the normal flow
+Even though top : 50px, left: 50px are written , they do
+not reposition the static element
+
+Example : position: relative
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Relative</title>
+<style>
+.box{
+width: 220px;
+padding: 20px;
+background-color: blue;
+border: 2px solid green;
+position: relative;
+top: 30px;
+left: 40px;
+}
+</style>
+</head>
+<body>
+<div class="box">I am moved using position: relative</div>
+</body>
+</html>
+Top : 20px - move down
+Left: 20px - move right
+Right: 20px - move left
+Bottom : 20 - moves up
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Relative</title>
+<style>
+.box{
+width: 200px;
+padding: 20px;
+margin: 10px;
+color: white;
+font-weight: bold;
+}
+.box1{
+background-color: aqua;
+}
+.box2{
+background-color: blueviolet;
+position: relative;
+top: 30px;
+left: 40px;
+}
+.box3{
+background-color: brown;
+}
+</style>
+</head>
+<body>
+<div class ="box box1"> BOX 1</div>
+<div class = "box box2">BOX 2(relative)</div>
+<div class="box box3"> BOX 3</div>
+</body>
+</html>
+
+Absolute:
+Absolute removes all the elements from the normal
+document flow and positions its relative to its ancestor
+positioned ancestor.
+Example: without reference
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=\, initial-scale=1.0">
+<title>Absolute</title>
+<style>
+.box{
+width: 180px;
+padding: 20px;
+background-color: blue;
+color: white;
+position: absolute;
+top: 50px;
+left: 60px;
+}
+</style>
+</head>
+<body>
+<div class="box">I am Absolute positioned</div>
+</body>
+</html>
+
+> the box is removed from the normal flow.
+>It's placed 50px from top and 60pc from left.
+Example parent- child usage
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=\, initial-scale=1.0">
+<title>Absolute</title>
+<style>
+.banner{
+position: relative;
+width: 500px;
+margin: 4px auto;
+}
+.banner img{
+width: 100%;
+display: block;
+border-radius: 10px;
+}
+.banner-text{
+position: absolute;
+bottom: 20px;
+left: 20px;
+color: white;
+background-color: rgba(0,0,0,0.5);
+padding: 12px 16px;
+border-radius: 6px;
+font-size : 20px;
+}
+</style>
+</head>
+<body>
+<div class="banner">
+<img src="london1.avif" alt="london" height="200px">
+<div class="banner-text">London City</div>
+</div>
+</body>
+</html>
+
+Fixed : fixes positions an element relative to the browser
+viewport.
+That means :
+It stays fixed on the screen
+It does not move when page scrolls
+Example :
+Floating help button
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fixed</title>
+<style>
+body{
+height: 2000px;
+font-family: Arial, Helvetica, sans-serif;
+}
+.help-btn{
+position: fixed;
+bottom: 20px;
+right: 20px;
+background-color: brown;
+color: white;
+padding: 15px 20px;
+border-radius: 50px;
+font-weight: bold;
+box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+</style>
+</head>
+<body>
+<h1>Scroll The Page</h1>
+<p>The help button will stay in the same place on the screen</p>
+<div class="help-btn">Help</div>
+</body>
+</html>
+
+Sticky
+Makes an element behave like a mix of relative and fixed.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sticky</title>
+<style>
+body{
+margin:0;
+font-family: Arial, Helvetica, sans-serif;
+}
+.section{
+height: 1500px;
+padding: 20px;
+background: #f4f4f4;
+}
+.sticky-header{
+position: sticky;
+Top:0;
+background-color: aqua;
+color:white;
+padding: 15px;
+font-size: 22px;
+z-index: 100;
+}
+.content{
+padding: 20px 0;
+line-height: 1.8;
+}
+</style>
+</head>
+<body>
+<div class="section">
+<div class = "sticky-header">I am Sticky</div>
+<div class="content">
+<p>Scroll Down and watch the header stick to the top.</p>
+<p>More Content.......</p>
+<p>Scroll More.......</p>
+<p> Sticky is very useful for section headings</p>
+</div>
+</div>
+</body>
+</html>
+> sticky top header
+>sticky table headers
+>sticky side navigation
+>sticky section titles.
+
+---------- ----------------- -----------------------
+Typography
+
+Typography in css means styling and controlling
+the appearance of the text on a web page.
+It includes:
+>text size
+>font family
+>text color
+>font weight
+>line spacing
+>letter spacing
+>text alignment
+>text decoration
+>shadow effects on text.
+Why typography?
+>improves readability
+>makes heading and content look professional
+>helps users scan content quickly.
+Typography
+
+1) Color - the color property is used to change the
+color of the text.
+Syntax :
+Color: red;
+Color: #333;
+Example :
+H1{
+Color: blue;
+}
+This makes the heading text blue.
+
+2) Font-size
+The font-size property is used to control the size of
+text.
+Syntax:
+Font-size: 16px;
+Font-size: 120%;
+Font-size: 2rem;
+Example :
+P{
+Font-size: 18px;
+}
+This makes the paragraph text 18 pixels.
+
+3) Font-family
+The font-family property is used to set the
+style/type of the font for text.
+Example:
+Arial
+Verdana
+Georgia
+Poppins
+Roboto
+Times new roman
+Syntax:
+Font-family: arial, sans-serif;
+Example:
+Body{
+Font-family: arial,sans-serif;
+}
+Why multiple fonts?
+If the first font is not available in the system, the
+browser uses the next one.
+
+4)font-weight
+The font-weight property controls how bold and
+light the text appears.
+Common values
+Normal
+Bold
+100 to 900
+Example :
+H1{
+Font-weight: bold:
+}
+P{
+Font-weight: 300;
+}
+Common understanding :
+400 - normal
+700 - bold
+
+5) font style
+The font-style property is used to make text normal
+or italic.
+Values:
+Normal
+Italic
+Oblique
+Example:
+P{
+Font-style: italic;
+}
+
+6) Text-align
+The text-align property controls the horizontal
+alignment of text inside an element.
+Values:
+Left
+Right
+Contre
+Justify
+Example :
+H1{
+Text-align: centre;
+}
+Left - text starts from left
+Centre - text appears in centre
+Right - text starts from right
+Justify - Text stretches evenly across the line.
+
+7) text-transform
+The text-transform property changes the case of
+text.
+Values :
+Uppercase
+Lowercase
+Capitalize
+Example :
+H2{
+Text-transform: uppercase;
+}
+- Welcome students
+- WELCOME STUDENTS
+
+8)Text-decoration
+The text - decoration property is used to add or
+remove decoration from text.
+Common use :
+Underline text
+Remove underline from links
+Line-through for prices or completed task.
+Example :
+A{
+Text-decoration: none;
+}
+This removes the underline from a link.
+2)
+H2{
+Text-decoration: underline;
+}
+9) Line height
+The line-height property controls the vertical
+spacing between lines of text.
+Example :
+P{
+Line-height: 1.8;
+}
+If paragraph texts has many lines , proper line
+spacing improves readability
+
+10) letter spacing
+The letter - spacing property controls the space
+between characters.
+Example :
+H1{
+Letter-spacing: 2px;
+}
+This increases space between letters.
+
+12) word spacing
+Example:
+P{
+Word-spacing: 5px;
+}
+
+11) text-shadow
+The text shadow property adds shadow behind the
+text.
+Syntax:
+Text-shadow: horizontal vertical blur color;
+Example :
+H1{
+Text- shadow : 2px 2px 5px gray;
+}
+Example:
+Html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Typography</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+<h1 class="main-heading">Welcome To CSS Typography</h1>
+<h2 class="sub-heading">Frontend Development Session</h2>
+<p class ="paragrapgh">
+Typography in css means styling and controlling the appearance
+of the text on a web page.
+It includes: >text size>font family >text color >font weight
+>line spacing >letter spacing >text alignment >text decoration >shadow
+effects on text.
+</p>
+<a href="#" class="read-more">Read More</a>
+</div>
+</body>
+</html>
+
+Css file :
+body{
+margin: 0;
+padding: 0;
+font-family: Arial, Helvetica, sans-serif;
+background-color: lightcoral;
+}
+.container{
+width: 80%;
+margin: 40px auto;
+background-color: white;
+padding: 30px;
+}
+.main-heading{
+color:burlywood;
+font-size: 40px;
+font-weight: 700;
+text-align: center;
+text-transform: uppercase;
+letter-spacing: 2px;
+text-shadow: 2px 2px 4px #cfcfcf;
+}
+.sub-heading{
+color:#444;
+font-size: 24px;
+text-align: center;
+font-style: italic;
+margin-top: 10px;
+}
+.paragrapgh{
+color: #333;
+font-size: 18px;
+line-height: 1.8;
+word-spacing: 4px;
+text-align: justify;
+margin-top: 25px;
+}
+.read-more{
+display: inline-block;
+margin-top: 20px;
+text-decoration: none;
+color: black;
+background-color: #cfcfcf;
+font-size: 16px;
+font-weight: bold;
+padding: 12px 20px;
+}
+
+---------- ------------
+Borders in CSS
+A border is a line drawn around an html
+element.
+Why borders are used:
+Highlight sections
+Separate content
+Show boxes clearly
+Give visual examples
+Real-world example :
+Form-input fields
+Buttons
+Profile cards
+Tables etc
+Border properties in css
+> border
+>border - width
+>border-style
+>border-color
+>border-top
+>border-right
+>border-bottom
+>border-left
+The border property is a shorthand for :
+Syntax:
+Border: width style color
+Width - controls the thickness of border
+Style - defines the style of border
+Common values :
+Solid
+Dashed
+Dotted
+Double
+Groove
+Ridge
+None
+Color - color of the border
+Border on individual sides:
+Border-top : 3px solid red;
+Border-right: 3px solid green;
+Border-bottom: 3px solid blue;
+Border-left: 3px solid orange;
+Example :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Border Example</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class=" container">
+<h1> CSS BOrders Example</h1>
+<div class="box box1">Solid Border</div>
+<div class="box box2">Dashed Border</div>
+<div class="box box3">Dotted Border</div>
+<div class="box box4">Different Border ON each side</div>
+</div>
+</body>
+</html>
+Css:
+body{
+margin: o;
+padding: 0;
+font-family: Arial, Helvetica, sans-serif;
+background-color: #f2f2f2;
+}
+.container{
+width: 80%;
+margin: 40px auto;
+}
+h1{
+text-align: center;
+margin-bottom: auto;
+}
+.box{
+background-color: white;
+padding: 20px;
+margin-bottom: 20px;
+font-size: 20px;
+}
+.box1{
+border: 3px solid black;
+}
+.box2{
+border: 3px dashed #16a34a;
+}
+.box3{
+border: 3px dotted #dc2626;
+}
+.box4{
+border-top: 4px solid red;
+border-right: 4px dashed green;
+border-bottom: 4px dotted blue;
+border-left: 4px solid orange;
+}
+
+------------ -------------- ------------------------
+What are Shadows?
+
+A shadow in css is a visual effect used to create depth,
+separation, and realism by placing blurred or offset shadow
+behind an element or text.
+Types Of shadows IN CSS
+There are mainly two types :
+Box-shadow
+Used to apply a shadow to anHTML element/ Box
+Examples:
+Cards
+Buttons
+Containers
+Profile boxes
+Product cards
+2)Text Shadow - used to apply a shadow to text content
+Example :
+Headings
+Hero titles
+Banners
+Box-shadow property:
+The box - shadow property is used to add one or more
+shadows around an element box.
+It can create :
+> soft card shadows
+>floatings effects
+>glow effects
+Syntax:
+Box-shadow: horizontal-offset vertical-offset
+blur-radius spread-radius color;
+Example :
+Box-shadow : 0px 4px 10px 0px rbga(0,0,0,0.2)
+Horizontal-offset:
+Moves shadow left or right
+Positive value - shadows moves to right
+Negative value - shadows moves to left
+Vertical-offset:
+Moves shadow up or down
+Positive - shadows moves down
+Negative - shadows moves up
+Blur-radius :
+Controls how soft or sharp the shadow is:
+0px - sharp shadow
+Higher value - softer shadow
+Spread-radius :
+Controls how much the shadow expands or shrinks.
+Positive: shadow becomes larger
+Negative : shadow becomes smaller
+Color:
+Defines the color of the shadow.
+Common used :
+Black
+Gray
+rgba() for transparency.
+Example :
+Html:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,
+initial-scale=1.0">
+<title>Shadow Example</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="card">
+<h2>Product Card</h2>
+<p>This card uses box-shadow to create depth</p>
+</div>
+</body>
+</html>
+Css:
+body{
+margin: 0px;
+padding: 40px;
+font-family: Arial, Helvetica, sans-serif;
+background-color: #f4f4f4;
+}
+.card{
+width: 300px;
+padding: 20px;
+background-color: white;
+border-radius: 10px;
+box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+}
+Real-world use :
+E-commerce product cards
+Login forms
+Notifications cards
+Buttons
+Navigation bars
+Search boxes
+Examples:
+Strong shadow:
+Box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
+Used for;
+Popup windows
+Important cards
+Soft card shadow
+Box-shadow: 0px 2px 8px rgba(0,0,0,0.15)
+Multiple shadows :
+box-shadow: 0px 2px 6px rgba(0,0,0,0.15), 0px 8px 20px rgba(0,0,0,0.1);
+Used for:
+Advanced UI cards
+Floating panels
+text -shadow property
+The text-shadow property is used add shadow
+effects to text , making it more attractive,
+readable, highlighted or visually separated from
+the background.
+When text is placed over :
+Banners
+Hero images
+Dark backgrounds
+Promotional sections
+Syntax:
+Text-shadow : horizontal effect vertical
+blur-radius color;
+Example :
+Text-shadow: 2px 2px 5px gray;
+Horizontal : moves shadow left or right
+Vertical : up/ down
+Blur radius : controls softness
+Color : sets shadow color
+Example :
+Html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Text Shadow Example</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1 class="heading">Welcome To CSS Class</h1>
+</body>
+</html>
+Css:
+body{
+margin: 0;
+background-color: #222;
+color: white;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+font-family: Arial, Helvetica, sans-serif;
+}
+.heading{
+font-size: 48px;
+text-shadow: 3px 3px 8px rgba(255, 255, 255, 0.3);
+}
+3px - shadow right
+3px - shadow downward
+8px - blur
+rgba(....) - light transparent glow.
+Overflow
+Overflow in css controls what happens
+when the content inside an element
+becomes larger than the element
+defined width or height.
+Why overflow:
+Text is too large for a box
+Images exceed container size
+A table is wider than screen.
+Syntax:
+Overflow: value;
+Common values:
+Visible
+Hidden
+Scroll
+Auto
+We can also control directions
+separately:
+Overflow-x
+Overflow-y
+Example:
+Hidden
+Css:
+body{
+font-family: Arial, Helvetica, sans-serif;
+padding: 40px;
+}
+.box{
+width: 260px;
+height: 100px;
+border: 2px solid black;
+padding: 10px;
+overflow: hidden;
+}
+Html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Overflow Hidden</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="box">
+The standard HTML element for creating a paragraph is the tag.
+Browsers automatically render paragraphs with a blank line before and
+after the text, and they collapse extra spaces or line breaks within the
+tag into a single space
+For preformatted text that preserves both spaces and line breaks
+exactly as written, use the tag.
+</div>
+</body>
+</html>
+Visible :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Overflow Hidden</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="box">
+The standard HTML element for creating a paragraph is the tag.
+Browsers automatically render paragraphs with a blank line before and
+after the text, and they collapse extra spaces or line breaks within the
+tag into a single space
+For preformatted text that preserves both spaces and line breaks
+exactly as written, use the tag.
+</div>
+</body>
+</html>
+Css:
+body{
+font-family: Arial, Helvetica, sans-serif;
+padding: 40px;
+}
+.box{
+width: 250px;
+height: 100px;
+border: 2px solid black;
+overflow: visible;
+}
+Overflow scroll:
+.box{
+width: 280px;
+height: 120px;
+border: 2px solid black;
+padding: 10px;
+overflow: scroll;
+}
+Scroll auto:
+If content fits - no scrollbar
+If content exceeds - scrollbar appears
+automatically.
+Overflow of horizontal scroll
+.box{
+width: 280px;
+height: 120px;
+border: 2px solid black;
+padding: 10px;
+overflow-x: scroll;
+overflow-y: hidden;
+white-space: nowrap;
+}
+Example:
+Shadow + overflow combined
+Html :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Card Example</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="card">
+<img
+src="https://images.unsplash.com/photo-1506744038136-46273834b3fb"
+alt="Nature">
+<div class="content">
+<h2>Nature View</h2>
+<p>
+This is a beautiful card example showing box-shadow adds
+depth and overflow
+hidden ensures the image staysb inside the rounded
+corners.
+</p>
+</div>
+</div>
+</body>
+</html>
+Css:
+body{
+margin: 0;
+padding: 40px;
+background-color: #f4f4f4;
+font-family: Arial, Helvetica, sans-serif;
+}
+.card{
+width: 320px;
+background-color: white;
+border-radius: 14px;
+overflow: hidden;
+box-shadow: 0px 8px 20px rgba(0,0,0,0.18);
+}
+.card img{
+width: 100%;
+height: 200px;
+object-fit: cover;
+display: block;
+}
+.content{
+padding: 20px;
+}
+.content h2{
+margin-top: 0;
+}
+
+--------- ------------ ----------------------------------
+CSS Flexbox
+Flexbox(flexible box layout) is a
+one-dimensional CSS layout model used to
+arrange elements in a single direction, either
+row or column, while providing powerful
+alignments , spacing, ordering and
+responsiveness.
+One dimensional means :
+Only one direction
+HORIZONTAL
+A B C D
+VERTICAL
+A
+B
+C
+D
+Real-world example :
+Navigation bar
+Logo home about contact
+Menu
+Buttons
+Cards
+tool bars
+Product row
+Basic flexbox structure
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flex box</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+<div class="box">1</div>
+<div class="box">2</div>
+<div class="box">3</div>
+<div class="box">4</div>
+</div>
+</body>
+</html>
+Css:
+.container{
+display: flex;
+}
+.box{
+width: 100px;
+height: 100px;
+background: skyblue;
+margin: 10px
+}
+display: flex makes children come in one row
+_________
+1 2 3 4
+_________
+Display: flex
+Converts a normal container into a flex
+container , allowing all direct children elements
+to become flex items.
+Without flex
+1
+2
+3
+With flex:
+1 2 3
+Example :
+.container{
+display: flex;
+border: 2px solid black;
+}
+.box{
+width: 120px;
+height: 120px;
+background: orange;
+margin: 10px
+}
+Flex direction
+Controls the direction in which flex items are
+placed
+Values :
+Row
+Row-reverse
+Column
+Column-reverse
+Example :
+.container{
+display: flex;
+flex-direction: row;
+}
+Row-reverse
+.container{
+display: flex;
+flex-direction: row-reverse;
+}
+Output:
+3 2 1
+Column:
+.conainer{
+display:flex;
+flex-direction:column;
+}
+Column-reverse;
+flex-direction:column-reverse;
+Justify content
+Aligns items horizontally(Main Axis)
+Values:
+Flex-start
+Centre
+Flex-end
+Space-between
+Space-around
+Space-evenly
+justify-content: center;
+justify-content: space-between;
+justify-content: space-around;
+Equal space around every item
+justify-content: space-evenly;
+Perfect equal spacing everywhere.
+Align Items
+Align items on the cross axis(vertical)
+Example:
+.container{
+display:flex;
+height:300px;
+align-items: center;
+}
+Other values:
+Flex-start
+Center
+Flex-end
+Stretch
+Flex Wrap
+Moves items onto the next line if there isn't
+enough space.
+Without wrap :
+1 2 3 4 5 6 7 8
+Everything squeezes
+With wrap:
+Flex-wrap: wrap;
+Output :
+1 2 3
+4 5 6
+7 8
+Gap
+Creates spacing between flex items.
+gap: 500px;
+Order
+Changes display order without changing HTML
+Html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flex box</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+<div class="box box1">1</div>
+<div class="box box2">2</div>
+<div class="box box3">3</div>
+<div class="box box4">4</div>
+</div>
+</body>
+</html>
+Css:
+.container{
+display:flex;
+}
+.box{
+width: 100px;
+height: 100px;
+background: skyblue;
+margin: 10px;
+border: 1px solid black;
+font-size: 30px;
+display:flex;
+justify-content: center;
+align-items: center;
+}
+.box1{
+order: 3;
+}
+.box2{
+order:4;
+}
+.box3{
+order:1;
+}
+.box4{
+order:2;
+}
+Flex-grow
+Allows items to grow
+.container{
+display:flex;
+}
+.box{
+width: 100px;
+height: 100px;
+background: skyblue;
+margin: 10px;
+border: 1px solid black;
+font-size: 30px;
+display:flex;
+justify-content: center;
+align-items: center;
+}
+.box1{
+flex-grow:1;
+}
+.box2{
+flex-grow:2;
+}
+.box3{
+flex-grow:1;
+}
+.box4{
+flex-grow: 3;
+}
+Flex shrink
+Allows items to shrink
+Flex-shrink:0;
+Prevents shrinking
+Flex basis
+Initial size before growing
+Flex-basis: 300px;
+Align-self
+Align one individual item
+Example :
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+.container{
+display:flex;
+height: 300px;
+border: 3px solid black;
+align-items: flex-start;
+}
+.box{
+width: 100px;
+height: 100px;
+background: skyblue;
+margin: 10px;
+border: 1px solid black;
+font-size: 30px;
+display:flex;
+justify-content: center;
+align-items: center;
+}
+.box1{
+flex-grow:1;
+}
+.box2{
+flex-grow:2;
+align-self: flex-end;
+}
+.box3{
+flex-grow:1;
+}
+.box4{
+flex-grow: 3;
+}
+CSS GRID
+Css grid is a two-dimensional layout system
+used to arrange elements into rows and
+columns.
+Real - world example :
+Dashboard
+Gallery
+Website layout
+Admin panel
+Product listing
+Newspaper layout.
+One-dimensional vs two dimensional
+Flex box:
+1 2 3 4
+Grid:
+1 2
+34
+Display: grid
+Converts the container into a grid container.
+.container{
+display: grid;
+grid-template-columns: 200px 200px;
+}
+.box{
+background: skyblue;
+padding: 20px;
+border: 1px solid black;
+}
+Grid-template-columns
+Defines number and width of columns
+Example :
+Grid-template-columns:
+150px
+150px
+150px;
+Fraction Unit(fr)
+Distributes remaining space proportionally
+Example :
+.container{
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+}
+.box{
+background: skyblue;
+padding: 20px;
+border: 1px solid black;
+}
+Equal width columns
+grid-template-columns: 1fr 2fr 1fr;
+This creates 3 columns
+Column width
+Column1 1part
+Column 2 2 part
+Column 3 1 part
+Total parts:
+1 + 2+ 1 = 4 parts
+So,
+Column1 = 800 / 4 = 200px
+Column2 = 2 * 200 = 400px
+Column3 = 200px
+Visualization
+Small | large | small
+1fr 2fr 1fr
+Grid-template-rows:
+100px
+200px
+Output:
+Row1
+100px
+Row2
+200px
+Gap:
+Gap: 20px;
+Output:
+1 2
+3 4
+Grid-column - makes an item span multiple
+columns.
+Syntax:
+Grid-column : start / end;
+Start - the column where the item starts
+End - the column line where the item ends
+.box1{
+Grid-column: ⅓;
+}
+Output:
+Start at column line 1
+End at column line 3
+Since the item ends at the line 3, it covers
+>column 1’
+>column 2
+It spans 2 columns
+_____________
+| 1 | 2 | 3 |
+|_4_|__5__|_6_ |
+Grid-row:
+Makes and item span multiple rows
+.box1{
+Grid-row:⅓;
+}
+Output:
+1 2
+1 3
+minmax()
+Grid-template-columns:
+repeat(3,minmax(150px,1fr));
+Autofill
+Grid-template-columns:
+repeat(auto-fill, minmax(200px,1fr))
+Complete example :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grid</title>
+<style>
+.container{
+display:grid;
+grid-template-columns: repeat(3,1fr);
+gap: 20px;
+padding: 20px;
+}
+.box{
+background: orange;
+padding:40px;
+text-align: center;
+font-size: 25px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="box">1</div>
+<div class="box">2</div>
+<div class="box">3</div>
+<div class="box">4</div>
+<div class="box">5</div>
+<div class="box">6</div>
+</div>
+</body>
+</html>
+repeat()
+Repeat the same column or row size multiple
+times,
+Making your code shorter and easier .
+repeat(number_of_times,size)
+
+--------------- --------------------- -------------------------------------------------------
+Responsive Design
+Responsive design is a web design approach where a website
+automatically adjusts its layout , images, fonts and other elements
+according to different screen sizes and devices.
+Responsive website changes its layout according to
+Mobile
+Tablet
+Laptop
+Desktop
+Responsive design example:
+On Desktop
+---------------------------------------------------
+Logo Search Box Cart
+---------------------------------------------------
+Product1 Product2 Product3 Product4
+On Mobile
+Logo
+Search
+Product1
+Product2
+Product3
+Why responsive design?
+Advantages
+Better user experience
+Faster loading
+SEO friendly
+Work on all devices
+Single website
+Types of devices
+Device width
+Mobile 320px - 480px
+Large mobile 481px - 767px
+Tablet 768px - 1024px
+Laptop 1025px - 1440px
+Desktop 1441px+
+Viewport
+Viewport is the visible area of a webpage inside the browser.
+Desktop Viewport
+-------------------------
+| |
+| Website |
+| |
+-------------------------
+Mobile Viewport
+---------
+| |
+|Site |
+| |
+---------
+The viewport changes depending on the device.
+Important meta tag
+<meta name=”viewport” content=”width=device-width”,initial
+scale = 1.0>
+Width = device-width
+Makes webpage width equal to the device width
+initial -scale = 1
+Initial zoom level
+Responsive units
+Avoid:
+Width: 800px;
+Use:
+Width : 100%
+Or max-width: 1200px;
+Useful responsive units
+%
+Vw
+Vh
+Wm
+Rem
+Fr
+Example :
+Width: 80%;
+Means - 80% of parent width
+2) width: 50vw;
+Means - 50% of viewport width
+3) height:100vh;
+Means - entire screen height
+Media Query
+Media query is a css feature that applies styles
+depending on device size.
+syntax :
+@mediaquery(condition)
+{
+CSS
+}
+Example :
+@media (max-width:768px)
+{
+Body{
+Background:red;
+}
+}
+Meaning :
+If screen width becomes 768px or smaller
+|
+The background becomes red.
+Example:
+Html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Media Query Example</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Responsive Design</h1>
+</body>
+</html>
+Css
+body{
+background: lightblue;
+text-align: center;
+font-size: 40px;
+}
+@media(max-width:768px){
+body{
+background: lightgreen;
+}
+}
+Output:
+Desktop
+Blue background
+Responsive design
+Mobile
+Green background
+Responsive design
+Explanation :
+Initially background - lightblue
+When width , <= 768px CSS inside media query executes.
+Max-width
+Apply styles
+UPTO that width
+Example :
+@media(max-width: 600px)
+Works for
+600
+550
+500
+450
+300
+Min-width
+Apply styles from the width onwards
+Example :
+@media(min-width: 768px)
+Works :
+768
+900
+1200
+1500
+Example :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Media Query Example</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Welcome to CSS class</h1>
+</body>
+</html>
+Css
+h1{
+font-size:50px;
+}
+@media(max-width:768px){
+h1{
+font-size: 20px;
+}
+}
+Desktop
+Welcome to css class
+Large font
+Mobile
+Welcome to css session
+Smaller font
+Explanation :
+Smaller screens needs smaller fonts
+Example :
+Responsive image
+img{
+width: 700px;
+}
+@media(max-width:768px){
+img{
+width:100%;
+}
+}
+Output:
+Desktop
+Large image
+Mobile
+Fits perfectly
+Explanation:
+img{
+width:100%;
+Means - take full available width
+Example
+Responsive navigation
+Desktop
+Home About Contact Login
+Mobile
+Home
+About
+Contact
+Login
+Example :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Navigation</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="navbar">
+<a href="#">Home</a>
+<a href="#">About</a>
+<a href="#">Services</a>
+<a href="#">Contact</a>
+</nav>
+</body>
+</html>
+Css
+*{
+margin:0;
+padding:0;
+box-sizing: border-box;
+}
+.navbar{
+display: flex;
+justify-content: center;
+gap: 30px;
+background: #222;
+padding: 20px;
+}
+.navbar a{
+color:white;
+text-decoration: none;
+font-size: 20px;
+}
+@media(max-width:768px){
+.navbar{
+flex-direction: column;
+align-items: center;
+}
+}
+Flex-direction: row
+|
+Column
+Example :
+Responsive cards
+Html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Cards</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+<div class="card">Card 1</div>
+<div class="card">Card 2</div>
+<div class="card">Card 3</div>
+</div>
+</body>
+</html>
+Css
+*{
+margin:0;
+padding:0;
+box-sizing: border-box;
+}
+.container{
+display: flex;
+gap: 20px;
+padding: 20px;
+}
+.card{
+background-color: skyblue;
+padding: 60px;
+flex:1;
+text-align: center;
+font-size: 30px;
+}
+@media(max-width: 768px){
+.container{
+flex-direction: column;
+}
+}
+
+------------- -------------------- -----------------------------------------------------
+CSS cursor Styles
+The cursor property changes the appearance of
+the mouse pointer when it hovers over an
+element
+It helps users to understand what action they
+can perform , improving the overall user
+experience(ux)
+Syntax:
+Selector{
+Cursor: value;
+}
+Example :
+Different cursor styles
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cursor Example</title>
+<style>
+.pointer{
+cursor: pointer;
+}
+.move{
+cursor: move;
+}
+.text{
+cursor: text;
+}
+.grab{
+cursor: grab;
+}
+.not{
+cursor: not-allowed;
+}
+</style>
+</head>
+<body>
+<h2 class="pointer">Pointer Cursor</h2>
+<h2 class="text">Text Cursor</h2>
+<h2 class="move">Move Cursor</h2>
+<h2 class="grab">Grab Allowed</h2>
+<h2 class="not">Not Allowed</h2>
+</body>
+</html>
+Pointer - hand appear
+Text - text selection cursor
+Move - four-direction arrow
+Not allowed - not allowed symbol
+Grab - hand grabbing object
+Value description
+Default normal arrow cursor
+Pointer hand cursor (clickable element)
+Move indicates movable element
+Not- allowe action is not allowed
+d
+Wait loading cursor
+Progress background processing
+Help help cursor
+Crosshair cross(+) cursor
+Grab grab object
+Grabbing while dragging
+Zoom-in zoom in icon
+zoom -out zoom out icon
+Example : Button Hover
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Button Hover</title>
+<style>
+button{
+padding: 15px 30px;
+font-size: 18px;
+cursor: pointer;
+}
+</style>
+</head>
+<body>
+<button>Submit</button>
+</body>
+</html>
+Hover the button
+The cursor changes into a hand pointer, showing
+that it is clickable
+Uses :
+Buttons
+Links
+Drag & drop
+Disabled buttons
+Image zoom
+CSS pointer Events(pointer-events)
+The pointer events property controls whether an
+element can respond to mouse events like
+clicking, hovering, or dragging.
+Syntax:
+Selector{
+Pointer-events: value;
+}
+Values
+Auto default
+None disable mouse interaction
+Example :
+Disable button click
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>pointer event example</title>
+<style>
+button{
+padding: 15px 30px;
+}
+.disable{
+pointer-events: none;
+opacity: 0.5;
+}
+</style>
+</head>
+<body>
+<button>Active Button</button><br>
+<button class="disable">Disabled Button</button>
+</body>
+</html>
+First button works normally
+The second button cannot be clicked.
+Example : transparent overlay
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transparent overlay example</title>
+<style>
+.container{
+position: relative;
+width: 300px;
+}
+img{
+width: 100%;
+}
+.overlay{
+position: absolute;
+top:0;
+left:0;
+width: 100%;
+height: 100%;
+background: rgba(255,0,0,0.3);
+pointer-events: none;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<img src="London.webp">
+<div class="overlay"></div>
+</div>
+</body>
+</html>
+The red overlay is visible, but you can still
+interact with the image because the overlay
+ignores mouse events.
+Real world uses :
+Image overlays
+Loading screens
+Disabled buttons
+CSS user select(user-select)
+The user-select property specifies whether the
+user can select text using the mouse.
+Syntax:
+Selector{
+User-select: value;
+}
+Auto default
+None cannot select text
+Text allow selection
+All select everything
+Example :
+Prevent copy
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Select Example</title>
+<style>
+p{
+user-select: none;
+font-size: 22px;
+}
+</style>
+</head>
+<body>
+<p>You cannot select this paragraph </p>
+</body>
+</html>
+Nothing gets selected
+Example : select entire text
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Select Example</title>
+<style>
+.code{
+user-select: all;
+background: #eee;
+padding: 15px;
+}
+</style>
+</head>
+<body>
+<div class="code">
+https://example.com
+</div>
+</body>
+</html>
+The entire URL becomes selected automatically
+Real world uses
+Coupon code
+Invite links
+Api keys
+Prevent copying
+CSS caret color(caret-color)
+The caret-color property changes the color of the
+blinking text cursor inside input fields and text
+areas.
+Syntax:
+Selector{
+Caret-color: value;
+}
+Example : blue caret
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caret Color Example</title>
+<style>
+input{
+padding: 10px;
+font-size: 20px;
+caret-color: blue;
+}
+</style>
+</head>
+<body>
+<input type="text" placeholder="Enter Name">
+</body>
+</html>
+Click inside the input
+The blinking cursor appears blue
+Example :
+Red caret in text area
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caret Color Example</title>
+<style>
+textarea{
+width: 300px;
+height: 150px;
+font-size: 18px;
+caret-color: red;
+}
+</style>
+</head>
+<body>
+<textarea> Type Something......</textarea>
+</body>
+</html>
+The blinking cursor is red instead of the default
+color.
+Real world uses :
+Custom font themes
+Dark mode inputs
+CSS outline vs Border
+Border:
+A border is a line drawn around an
+element. It is part of the css box model
+and occupies space, affecting the
+element's total size.
+Outline:
+An outline is a line drawn outside the
+border . it is not part of the box model,
+So it does not take up space or change
+the elements.
+Syntax:
+Selector{
+Border: 2px solid black;
+}
+Outline:
+Selector{
+Outline: 3px solid red;
+}
+Example:
+Border
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Border Example</title>
+<style>
+.box{
+width: 200px;
+padding: 20px;
+border: 4px solid blue;
+}
+</style>
+</head>
+<body>
+<div class="box">
+Border Example
+</div>
+</body>
+</html>
+A blue border surrounds the box and
+becomes part of the elements size
+Example : Outline
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Outline Example</title>
+<style>
+.box{
+width: 200px;
+padding: 20px;
+border: 2px solid black;
+outline: 4px solid red;
+}
+</style>
+</head>
+<body>
+<div class="box">
+Outline Example
+</div>
+</body>
+</html>
+A black border appears around the box
+Outside the border, a red outline is
+drawn
+The outline does not increase the size of
+the box.
+Example : outline on input focus
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Outline Input Example</title>
+<style>
+input{
+padding: 12px;
+font-size: 18px;
+}
+input:focus{
+outline: 3px solid green;
+}
+</style>
+</head>
+<body>
+<input type="text" placeholder="Enter Name">
+</body>
+</html>
+A green outline appears , indicating that
+the input is focused.
+CSS visibility vs Display
+CSS display
+The display property controls whether
+an element is rendered and how it
+participates in the page layout
+When using :
+Display: none;
+The element is completely removed
+from the page layout.
+Syntax:
+Display: none;
+Example : Display None
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Display None Example</title>
+<style>
+.hide{
+display: none;
+}
+</style>
+</head>
+<body>
+<h1>Heading One</h1>
+<h1 class="hide">
+Hidden Heading
+</h1>
+<h1>
+Heading Three
+</h1>
+</body>
+</html>
+The second heading disappears
+completely
+No space is reserved
+CSS visibility
+The visibility property controls whether
+an element is visible while keeping its
+space reserved
+Using:
+Visibility: hidden;
+Makes the element invisible but its
+space remains
+Syntax:
+Visibility: hidden;
+Example : visibility hidden
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Display None Example</title>
+<style>
+.hide{
+visibility: hidden;
+}
+</style>
+</head>
+<body>
+<h1>Heading One</h1>
+<h1 class="hide">
+Hidden Heading
+</h1>
+<h1>
+Heading Three
+</h1>
+</body>
+</html>
+The second heading is invisible , but an
+empty space remains where it would
+have been.
+Real-world uses:
+Display:none
+Navigation menus
+Login popups
+Mobile menus
+tabs
+Visibility : hidden
+Loading placeholders
+Animations
+UI transitions
+
+----------------- ----------------------------------------------------- ------------------------------
+CSS variables
+Css variables (also called as custom properties) are reusable values stored in
+inside CSS
+Instead of using:
+Color: blue;
+Border: blue;
+Background : blue;
+We write;
+–primary-color: blue;
+Then we use;
+Color: var(--primary-color);
+Border: 2px solid var(--primary-color);
+Why are they called as custom properties:
+Because we create own property names
+Css already has :
+Color
+Background
+Margin
+Padding
+We can create our own :
+–primary
+–secondary
+–heading
+–spacing
+Example :
+With variables
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+:root{
+--primary-color: red;
+}
+h1{
+color: var(--primary-color);
+}
+button{
+background:var(--primary-color);
+}
+.card{
+border: 1px solid var(--primary-color);
+}
+</style>
+</head>
+<body>
+<h1>Hello</h1>
+<button>Click</button>
+<div class="card">
+Card
+</div>
+</body>
+</html>
+–primary-color: red;
+Changes everything.
+Adv:
+Reusable
+Easy maintenance
+Less code
+Why use css variables ?
+Suppose a website contains
+>navbar
+>footer
+>sidebar
+>cards
+>buttons
+>forms
+All use :
+Blue
+Real-world uses :
+Colors:
+–primary-color
+Border radius
+–radius
+Shadows
+–shadow
+Width
+–conatiner-width
+Spacing
+–gap
+Syntax:
+–variable-name: value;
+Example :
+:root{
+–main-color: red;
+}
+Example 2:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+:root{
+--main-color:purple;
+}
+h1{
+color:var(--main-color);
+}
+p{
+color: var(--main-color);
+}
+</style>
+</head>
+<body>
+<h1>CSS variables</h1>
+<p>Reusable colors using variables</p>
+</body>
+</html>
+Variable - stores - purple
+H1 and p - reuse it.
+Only one variable controls everything.
+Naming rules:
+–primary-color
+–font-size
+–padding
+2)
+–abc
+–-xyz
+4)
+:root
+What is :root ?
+:root is a pseudo-class selector that represents the highest-level element in HTML
+document
+In HTML
+:root
+Syntax:
+:root{
+–main-color : red;
+}
+LOcal Variables
+Variables can also be declared inside any selector.
+They only work inside that selector and its children
+Example :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Local Variables Example</title>
+<style>
+.card{
+--card-color:orange;
+background-color:var(--card-color);
+padding: 20px;
+}
+p{
+color:var(--card-color);
+}
+</style>
+</head>
+<body>
+<div class="card">
+Hello world!
+</div>
+<p>CSS variables example</p>
+</body>
+</html>
+Variable exists only inside
+.card
+Outside:
+.card - it cannot be used.
+Global Variables local variables
+Stored in :root stored inside selector
+Accessible everywhere accessible only with the selector
+Best for themes better for component customization
+var() function
+var() is used to retrieve the value stored in a css variable.
+Without var(), css cannot read the variable.
+Syntax:
+Property: var(--variable-name);
+Example :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Var Function Example</title>
+<style>
+:root{
+--primary-color: crimson;
+}
+h1{
+color: var(--primary-color);
+}
+button{
+background-color: var(--primary-color);
+color: white;
+border: none;
+padding: 10px 20px;
+cursor: pointer;
+}
+</style>
+</head>
+<body>
+<h1>Using var()</h1>
+<button>Submit</button>
+</body>
+</html>
+–primary-color - stores the color crimson
+var(--primary-color) retrieves crimson
+Both heading and button use the same value
+Changing one variable updates both elements
+FallBack Values
+Fallback values are used when the variable does not exist.
+Syntax:
+var(--variable-name, fallback-value)
+Example :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FALL BACK VALUE Example</title>
+<style>
+h1{
+color:var(--heading-color,blue);
+}
+</style>
+</head>
+<body>
+<h1>CSS</h1>
+</body>
+</html>
+–heading-color is not defined
+Browser uses the fallback value blue
+Prevents missing styles when variables are unavailable.
+Updating variables
+The biggest advantage of CSS variables is that changing one value updates every
+place where it is used.
+Example : light and dark theme
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Light and Dark Theme</title>
+<style>
+:root{
+--bg:white;
+--text:black;
+}
+body{
+background:var(--bg);
+color:var(--text);
+font-family:Arial, Helvetica, sans-serif;
+padding:30px;
+}
+.dark{
+--bg:#222;
+--text:white;
+}
+</style>
+</head>
+<body class="dark">
+<h1>Dark Theme</h1>
+<p> This page uses CSS Variables for theming</p>
+</body>
+</html>
+:root defines the default (light) theme
+.dark overrides the variables
+Body automatically uses the updates values through var()
+Only variable values change , not the css rules.
+Colors example :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colors Example</title>
+<style>
+:root{
+--primary:#3498db;
+--success:#2ecc71;
+--danger:#e74c3c;
+}
+.primary{
+background:var(--primary);
+color:white;
+padding:10px;
+}
+.success{
+background:var(--success);
+color:white;
+padding:10px;
+}
+.danger{
+background:var(--danger);
+color:white;
+padding:10px;
+}
+</style>
+</head>
+<body>
+<div class="primary">Primary</div>
+<br>
+<div class="success">Success</div>
+<br>
+<div class="danger">Danger</div>
+</body>
+</html>
+Each color is stored once and reused.
+If the design team changes the primary color, you only edit –primary:
+-------------- -------------- ------------------------------------------
+What are pseudo-classes
+A pseudo-class is a special keyword added to a css property that
+styles an element based on its state, user interaction, or position
+Unlike normal selectors, pseudo- classes do not require doing
+extra classes or ids in HTML
+SYntax:
+Selector : pseudo-clas{
+Property: value;
+}
+Example :
+Button: hover{
+Background-color: blue;
+}
+Button - element selector
+:hover - pseudo - class
+Changes style only when the mouse is over the button.
+Example :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pseudo-Class Examples</title>
+<style>
+button:hover{
+background: green;
+color: white;
+}
+</style>
+</head>
+<body>
+<button>Hover Me</button>
+</body>
+</html>
+-buttons has default color
+When mouse enter
+Button: hover
+Gets activated
+When mouse leaves
+Original style returns
+Example 2:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pseudo-Class Examples</title>
+<style>
+button{
+background: royalblue;
+color: white;
+padding: 15px 25px;
+border: none;
+font-size: 18px;
+cursor: pointer;
+}
+button:hover{
+background: orange;
+}
+</style>
+</head>
+<body>
+<button>Hover Me</button>
+</body>
+</html>
+Initially button is blue
+When the user moves the mouse over it
+Css changes
+Background: orange;
+When the mouse leaves
+It becomes blue again.
+:active
+Applies styles while an element is being clicked.
+Syntax:
+Selector: active{
+}
+Example :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pseudo-Class Examples</title>
+<style>
+button{
+padding: 15px 25px;
+background: green;
+color: white;
+border: none;
+}
+button:active{
+background: red;
+transform: scale(.95);
+}
+</style>
+</head>
+<body>
+<button>Click Me</button>
+</body>
+</html>
+Real world:
+Mobile buttons
+Games
+Click animations
+Payment buttons
+:focus
+Applies styles when an element receives keyboard or mouse
+focus
+Mostly used with:
+Input
+Textarea
+Button
+Select
+Example :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pseudo-Class Examples</title>
+<style>
+input{
+padding: 12px;
+font-size: 18px;
+}
+input:focus{
+border: 3px solid blue;
+outline: none;
+background: #eef6ff;
+}
+</style>
+</head>
+<body>
+<input type="text" placeholder="Enter Name">
+</body>
+</html>
+Initially input looks normal
+When clicked
+Or user presses Tab
+Input gets blue border
+Real-world uses :
+Login forms
+Registration forms
+Search boxes
+Contact forms
+:focus-visible
+Only shows focus styles when the browser decides the user
+needs a visible focus indicator- typically during keyboard
+Navigation.
+Mouse clicks usually do not trigger it.
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pseudo-Class Examples</title>
+<style>
+button{
+padding: 15px;
+}
+button:focus-visible{
+outline: 4px solid orange;
+}
+</style>
+</head>
+<body>
+<button>Submit</button>
+</body>
+</html>
+Mouse click - no orange outline
+Keyboard tab
+Orange outline appears
+Better accessibility
+Why use it ?
+Improves keyboard navigation without showing focus rings after
+every mouse click.
+:focus :focus-visible
+Mouse
++ keyboard keyboard
+Always activated browser decides
+:visited
+Styles links that the user has already visited
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pseudo-Class Examples</title>
+<style>
+a:visisted{
+color: purple;
+}
+</style>
+</head>
+<body>
+<a href="https://www.x.com">Twitter</a>
+</body>
+</html>
+Before opening
+Blue
+After visiting
+Purple
+Browser remembers the visited link.
+Real-world uses :
+Navigation websites
+Documentation
+Wikipedia
+Search engines
+:link
+Styles hyperlinks that have not yet been visited
+Example :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pseudo-Class Examples</title>
+<style>
+a:link{
+color: green;
+}
+</style>
+</head>
+<body>
+<a href="https://www.uber.com">Uber</a>
+</body>
+</html>
+Before visiting
+Green
+After visiting
+:visited takes over.
+:checked
+Styles selected radio buttons and checkboxes.
+Example :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pseudo-Class Examples</title>
+<style>
+input:checked{
+accent-color: green;
+}
+</style>
+</head>
+<body>
+<label>
+<input type="checkbox">
+HTML
+</label>
+<br>
+<label>
+<input type="checkbox">
+CSS
+</label>
+</body>
+</html>
+Unchecked - default
+Checked - green checkbox
+Realworld uses :
+Settings
+Preferences
+Forms
+Todo lists
+:disabled
+Styles elements that cannot be interacted with
+Usually used on:
+Button
+Label
+Input
+Example :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pseudo-Class Examples</title>
+<style>
+input:disabled{
+background: #ddd;
+cursor: not-allowed;
+}
+</style>
+</head>
+<body>
+<input type="text" disabled value=":Disabled Input"
+</body>
+</html>
+Input cannot be edited
+Cursor changes to :not allowed”
+Real world uses
+Loading forms
+Permissions
+Unavailable features.
+:enabled
+Targets elements that are available for interaction
+Example :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pseudo-Class Examples</title>
+<style>
+input:enabled{
+border: 2px solid green;
+}
+</style>
+</head>
+<body>
+<input type="text">
+<input type="text" disabled>
+</body>
+</html>
+First input - green border
+Second input - disabled
+No green border
+:required
+Styles form fields that must be filled before
+submitting
+Works only if HTML contains the required attribute.
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pseudo-Class Examples</title>
+<style>
+input:required{
+border:2px solid red;
+}
+</style>
+</head>
+<body>
+<input
+type="email"
+required
+placeholder="Email"
+>
+</body>
+</html>
+Because the input has the required attribute
+Css applies the red border
+The browser also prevents form submission until the
+field is filled.
+Real-world uses:
+Registrations forms
+Login forms
+Payment forms
+Admission forms
+:optional
+Styles fields that are not required
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pseudo-Class Examples</title>
+<style>
+input:optional{
+border:2px solid green;
+}
+</style>
+</head>
+<body>
+<input
+type="text"
+placeholder="NickName"
+>
+</body>
+</html>
+Since there is no required attribute
+The field is optional
+Css applies the green border.
+:required :optional
+Must be filled can be left empty
+Has required attribute no required attributes
+Browser validates browser does not support
+Force input.
+
+------------ ----------------- --------------------
+Structural Pseudo Classes
+Structural pseudo classes select elements based on :
+>their position
+>their oder
+>their parent
+>their siblings
+>their relationships
+Instead of adding classes like :
+<li class=”first”></l1>
+<li class=”last”></li>
+<li class=”third></li>
+CSS can automatically detect these elements
+Without structural pseudo-classes:
+<li class=”first”>Apple</li>
+<li class=”second”>Banana</li>
+<li class=”third>Orange</li>
+<li class=”fourth>Mango</li>
+Lots of unnecessary classes:
+With pseudo-classes:
+Li:first-child{}
+Li: last-child{}
+li:nth-child(2){}
+Cleaner HTML
+:first-child
+Selects the first child inside a parent.
+Syntax:
+Selector: first-child{
+}
+Example :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>First Child Example</title>
+<style>
+li:first-child{
+background: green;
+color: white;
+padding: 10px;
+}
+</style>
+</head>
+<body>
+<ul>
+<li>Apple</li>
+<li>Banana</li>
+<li>Orange</li>
+<li>Mango</li>
+</ul>
+</body>
+</html>
+Children inside <ul>
+1 apple
+2 banana
+3 orange
+4 mango
+Only apple gets selected
+Real world uses :
+Highlight first menu
+First notification
+First card
+Feature product
+:last-child
+Selects the last child inside the parent
+Example :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Last Child Example</title>
+<style>
+li:last-child{
+background: red;
+color: white;
+padding: 10px;
+}
+</style>
+</head>
+<body>
+<ul>
+<li>Apple</li>
+<li>Banana</li>
+<li>Orange</li>
+<li>Mango</li>
+</ul>
+</body>
+</html>
+Only mango is selected
+Uses:
+Footer item
+Last menu
+Last notification
+Latest product
+:nth-child()
+Selects an element based on its position
+Syntax:
+selector:nth-child(number)
+Example :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>nth-Child Example</title>
+<style>
+li:nth-child(2){
+background: red;
+color: white;
+padding: 10px;
+}
+</style>
+</head>
+<body>
+<ul>
+<li>Apple</li>
+<li>Banana</li>
+<li>Orange</li>
+<li>Mango</li>
+</ul>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>nth-Child Example</title>
+<style>
+li:nth-child(even){
+background: red;
+color: white;
+padding: 10px;
+}
+</style>
+</head>
+<body>
+<ul>
+<li>Apple</li>
+<li>Banana</li>
+<li>Orange</li>
+<li>Mango</li>
+</ul>
+</body>
+</html>
+Odd:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>nth-Child Example</title>
+<style>
+li:nth-child(odd){
+background: red;
+color: white;
+padding: 10px;
+}
+</style>
+</head>
+<body>
+<ul>
+<li>Apple</li>
+<li>Banana</li>
+<li>Orange</li>
+<li>Mango</li>
+</ul>
+</body>
+</html>
+3n
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>nth-Child Example</title>
+<style>
+li{
+padding: 10px;
+}
+li:nth-child(3n){
+background: orange;
+}
+</style>
+</head>
+<body>
+<ul>
+<li>Apple</li>
+<li>Banana</li>
+<li>Orange</li>
+<li>Mango</li>
+<li>Grapes</li>
+<li>Pineapple</li>
+</ul>
+</body>
+</html>
+Every third item
+3
+6
+9
+12
+15
+Example : formulas li:nth-child(2n+1)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>nth-Child Example</title>
+<style>
+li{
+padding: 10px;
+}
+li:nth-child(2n+1){
+background: brown;
+}
+</style>
+</head>
+<body>
+<ul>
+<li>Apple</li>
+<li>Banana</li>
+<li>Orange</li>
+<li>Mango</li>
+<li>Grapes</li>
+<li>Pineapple</li>
+</ul>
+</body>
+</html>
+Is to select all odd-numbered list items
+li:nth-child(2n + 1)
+N starts from 0
+Formula : 2n + 1
+N calculation selected item
+0 2*0 + 1 = 1 1st item
+1 2*1 + 1 = 3 3rd item
+2 2*2 + 1 =5 5th item
+3 2*3 + 1 = 7 7th item.
+Example : 3n + 2
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>nth-Child Example</title>
+<style>
+li{
+padding: 10px;
+}
+li:nth-child(3n+2){
+background: rgb(157, 123, 157);
+}
+</style>
+</head>
+<body>
+<ul>
+<li>Apple</li>
+<li>Banana</li>
+<li>Orange</li>
+<li>Mango</li>
+<li>Grapes</li>
+<li>Pineapple</li>
+</ul>
+</body>
+</html>
+3n+ 2 = 3(0) + 2 = 2nd element
+3(1) + 2 = 5th element
+3(2) + 2 = 8th element
+3(3) + 2 = 11th element
+:nth-of-type()
+Selects elements based on their type.
+Unlike nth-child,
+It ignores different element types.
+Example :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>nth-Child Example</title>
+<style>
+p:nth-of-type(2){
+background: yellow; }
+</style>
+</head>
+<body>
+<h1>Heading</h1>
+<p>Paragraph</p>
+<div>Box</div>
+<p>Paragraph 2</p>
+<p>Paragraph 3</p>
+</body>
+</html>
+Paragraphs only
+P1
+P2
+P3
+Second paragraph gets selected
+Even though
+Div exists.
+Nth-child - counts every child
+Nth-of-type - counts only that element type.
+:is() - allows grouping multiple selectors into one rule
+Instead of repeating css
+We write one selector.
+h1{
+color:red;
+}
+h2{
+color:red;
+}
+h3{
+color:red;
+}
+With is()
+:is(h1,h2,h3{
+color:red;
+})
+Example :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=\, initial-scale=1.0">
+<title>Document</title>
+<style>
+:is(h1,h2,h3){
+color: blue;
+}
+</style>
+</head>
+<body>
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+</body>
+</html>
+:Where
+:where() is similar to :is() , but it has zero specificity.
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Where Example</title>
+<style>
+:where(h1,h2,h3){
+color: green;
+}
+</style>
+</head>
+<body>
+<h1>Hello</h1>
+<h2>World</h2>
+<h3>CSS</h3>
+</body>
+</html>
+Looks similar to :is()
+The important difference is specificity, not appearance
+:has()
+Selects a parent element if it contains a specific child
+This is often called the parent selector.
+Example :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>has example</title>
+<style>
+.card:has(img){
+border: 4px solid blue;
+padding: 20px;
+}
+</style>
+</head>
+<body>
+<div class="card">
+<img src="London.webp">
+<p>Image card</p>
+</div>
+<div class="card">
+<p>No Image</p>
+</div>
+</body>
+</html>
+First card - contains image
+Gets blue border
+Second card - no image
+No border
+Pseudo-Elements
+pseudo -element is used to style a specific part of an HTML
+element or to create virtual elements that do not exist in
+HTML.
+Unlike pseudo-classes (which change an element based on
+its state),
+Pseudo-elements allows us to style parts inside an element.
+Double colon(::)
+Without pseudo elements
+We would need extra html
+Example:
+<h2>
+<span>*</span>
+CSS course
+</h2>
+Instead ,
+Css can generate it
+H2::before{
+content:”*”;
+}
+Cleaner HTML
+Pseudo-class pseudo-element
+Styles an element styles a part of an element
+Based on its state
+Use : use ::
+Example: example:
+:hover ::before
+Reacts to user interaction creates or styles virtual
+content
+::before
+Creates a virtual element before the content of an element
+It must use the content property
+Syntax:
+Selector::before{
+Content:” ”;
+}
+Example :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elements Examples</title>
+<style>
+h1::before{
+content:"🔥";
+color: red;
+}
+</style>
+</head>
+<body>
+<h1>CSS Tutorial</h1>
+</body>
+</html>
+Example :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+button::before{
+content: "🛒";
+}
+button{
+padding: 15px;
+}
+</style>
+</head>
+<body>
+<button>
+Add to cart
+</button>
+</body>
+</html>
+Real world uses
+Icons
+Quotes
+Decorative shapes
+Labels
+Bullet customization
+:: after
+Creates virtual content after an element
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+h2::after{
+content:"✅";
+color: green;
+}
+</style>
+</head>
+<body>
+<h2>Registration Complete</h2>
+</body>
+</html>
+Uses:
+Status badges
+External link icon
+Labels
+::before
+Inserts content before
+Appears first
+Requires content
+::after
+Inserts content after
+Appears last
+Requires content
+::first-letter - styles only the first letter
+Example :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>First Letter</title>
+<style>
+p::first-letter{
+font-size: 50px;
+color: red;
+font-weight: bold;
+}
+</style>
+</head>
+<body>
+<p>CSS Makes Websites Beautiful</p>
+</body>
+</html>
+Only c becomes large
+Remaining text stays normal
+Uses:
+Newspaper articles
+Magazines
+Blogs
+Story pages.
+::first-line : styles only the first line of the text.
+::selection - styles the text selected by the user.
+Normally, selected text appears blue ,
+We can customize it
+Example :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Selection Example</title>
+<style>
+::selection{
+background: black;
+color:yellow;
+}
+</style>
+</head>
+<body>
+<h2>Select This Text</h2>
+<p>Try dragging your mouse across this paragraph</p>
+</body>
+</html>
+When the user selects text, instead of default blue selection becomes black background , yellow
+text.
+Uses:
+Branding
+Reading websites
+Documentation
+Blogs
+::placeholder - styles placeholder text inside inputs
+Example :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PlaceHolder Example</title>
+<style>
+input{
+padding:12px;
+}
+input::placeholder{
+color: gray;
+font-style: italic;
+}
+</style>
+</head>
+<body>
+<input type="text" placeholder="Enter Your name">
+</body>
+</html>
+Only placeholder text changes
+User entered text remains unaffected
+Uses:
+Forms
+Search bars
+Registration
+Login pages
+::marker - styles list bullet or numbers
+Li::marker{
+Color: red;
+Font-size: 25px;
+}
+<body>
+<ul>
+<li>html</li>
+<li>css</li>
+<li>javascript</li>
+</ul>
+</body>
+::file-selector-button
+Styles the button of an <input type=”file”>
+Normally browsers display a default button
+This pseudo-element lets us customize it.
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>File-selector-button</title>
+<style>
+input::file-selector-button{
+background: royalblue;
+color: white;
+padding: 10px;
+border: none;
+cursor:pointer;
+}
+</style>
+</head>
+<body>
+<input type="file">
+</body>
+</html>
+Uses:
+File upload forms
+Resume upload
+Documents
+Profile image upload.
+
+--------- ------------------------ --------------------------------
+What is Transition?
+A transition allows CSS properties to change
+smoothly from one value to another.
+Without transition
+Blue - hover - red
+With transition
+Blue
+|
+Purple
+|
+Red
+Smoothly changes
+Syntax:
+Transition: property duration timing-function delay
+Transition : all 0.5s ease;
+Property meaning
+Transition - property which property changes
+Transition-duration time taken
+Transition-timing-
+Function speed curve
+Transition-delay delay before starting.
+Example :
+Background color transition
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transition & Animations</title>
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing: border-box;
+}
+body{
+font-family: Arial, Helvetica, sans-serif;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+background: #f4f4f4;
+}
+.box{
+width: 200px;
+height: 200px;
+background: royalblue;
+transition: background 1s;
+}
+.box:hover{
+background: red;
+}
+</style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>
+Example 2:
+Width transition
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transition & Animations</title>
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing: border-box;
+}
+body{
+font-family: Arial, Helvetica, sans-serif;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+background: #f4f4f4;
+}
+.box{
+width:150px;
+height: 100px;
+background: green;
+transition:width 1s;
+}
+.box:hover{
+width: red;
+}
+</style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>
+Example :
+Multiple properties
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transition & Animations</title>
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing: border-box;
+}
+body{
+font-family: Arial, Helvetica, sans-serif;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+background: #f4f4f4;
+}
+.box{
+width:150px;
+height:150px;
+background: orange;
+transition:
+width 1s,
+height 1s,
+background 1s;
+}
+.box:hover{
+width: 250px;
+height:250px;
+background: purple;
+}
+</style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>
+Example :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transition & Animations</title>
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing: border-box;
+}
+body{
+font-family: Arial, Helvetica, sans-serif;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+background: #f4f4f4;
+}
+.box{
+width:150px;
+height:150px;
+background: tomato;
+transition:all .5s;
+}
+.box:hover{
+background: black;
+border-radius: 50%;
+transform: rotate(180deg);
+}
+</style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>
+Transition timing functions:
+Linear
+Transition: all 2s linear;
+Constant speed
+Ease (default)
+Transition : all 2s ease;
+Slow
+Fast
+Slow
+Ease-in
+Starts slowly
+Transition: all 2s ease-in;
+Ease-out
+Ends slowly
+Transition : all 2s ease-out;
+Ease-in-out
+Slow
+Fast
+Slow
+Transition : all 2s ease-in-out;
+Delay
+Transition: all 1s 2s;
+Wait 2 seconds
+Then animate
+Example :
+Transform + transition
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transition & Animations</title>
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing: border-box;
+}
+body{
+font-family: Arial, Helvetica, sans-serif;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+background: #f4f4f4;
+}
+.box{
+width:200px;
+height:200px;
+background: purple;
+transition:.5s;
+}
+.box:hover{
+transform:
+translateY(-20px)
+scale(1.1)
+rotate(10deg);
+}
+</style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>
+Transition: .5s;
+Animate all animatable properties
+The animation takes 0.5 seconds
+translateY(-20px):
+Moves the box 20 pixels upward
+Negative value(-20px) - moves up
+Positive value(20px) - moves down
+scale(1.1)
+Increase the size of the box to 110% of its original
+size
+scale(1) - original size
+scale(1.1) - 10% larger
+scale(2) - double the size
+scale(0.5) - half the size
+rotate(10deg)
+Rotates the box 10 degrees clockwise
+Positive values - clockwise
+Negative values - counterclock wise
+Example :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transition & Animations</title>
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing: border-box;
+}
+body{
+font-family: Arial, Helvetica, sans-serif;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+background: #f4f4f4;
+}
+button{
+padding:15px 30px;
+border:none;
+background: #0077ff;
+color:white;
+cursor: pointer;
+transition: .4s;
+}
+button:hover{
+background: #0056d6;
+transform:scale(1.05);
+}
+</style>
+</head>
+<body>
+<button>Login</button>
+</body>
+</html>
+CSS Animations
+Transition needs an event
+Animations does not
+Animations start automatically
+Transition:
+Hover required
+Animations:
+Starts automatically
+Syntax:
+@keyframes animationName{
+From{
+}
+To{
+}
+}
+Apply:
+animationName
+Duration
+Timing-function
+Delay
+Iteration-count
+Direction
+Fill-mode;
+Example :
+Move box
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transition & Animations</title>
+<style>
+.box{
+width: 100px;
+height: 100px;
+background: red;
+animation:moveBox 3s;
+}
+@keyframes moveBox{
+from{
+transform: translateX(0);
+}
+to{
+transform: translateX(400px);
+}
+}
+</style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>
+Animation: moveBox 3s;
+Applies the animation to the box
+moveBox - name of the animation
+3s - animation runs for 3 sec
+@keyframes
+@keyframes moveBox{
+Defines how the animation should behave
+The name moveBox must match the animation
+names used in
+From - this is the starting point of the animation
+translateX(0) - means the box starts at its original
+position
+Equivalent to 0% of the animation
+To - this is the ending point of the animation
+translateX(400px) moves the box 400 pixels to the
+right.
+The box smoothly moves 400px to the right over
+3seconds.
+Example : color animation
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transition & Animations</title>
+<style>
+.box{
+width: 150px;
+height: 150px;
+animation:colorChange 4s infinite;
+}
+@keyframes colorChange{
+0%{
+background: red;
+}
+25%{
+background: green;
+}
+50%{
+background:blue;
+}
+75%{
+background: orange;
+}
+100%{
+background: red;
+}
+}
+</style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>
+Animation : colorChange 4s infinite
+colorChange - animation name
+4s - one complete animation takes 4 seconds
+Infinite - the animation repeats forever
+0% - at the start of the animation (0 seconds) , the
+box is red
+25% - at 25% of 4seconds (1second), the box
+becomes green
+50% - at 50% of 4 seconds(2 seconds) , the box
+becomes blue
+75% - 75% of 4 second(3seconds) the box becomes
+orange
+100% - at the end of 4seconds, the box becomes
+red again.
+Because the animation is infinite , it immediately
+starts the next cycle
+Example :
+Bounce ball
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transition & Animations</title>
+<style>
+.ball{
+width:100px;
+height:100px;
+border-radius: 50%;
+background: red;
+animation: bounce 1s infinite alternate;
+}
+@keyframes bounce{
+from{
+transform: translateY(0);
+}
+to{
+transform: translateY(-250px);
+}
+}
+</style>
+</head>
+<body>
+<div class="ball"></div>
+</body>
+</html>
+Animation: bounce 1s infinite alternate;
+Bounce - animation name
+1s - one bounce takes 1 sec
+Infinite - repeated forever
+Alternate - plays forward , then backwards, instead
+of jumping back to start.
+Example:
+Loading spinner
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transition & Animations</title>
+<style>
+.loader{
+width:80px;
+height:80px;
+border: 10px solid lightgray;
+border-top: 10px solid royalblue;
+border-radius: 150%;
+animation: spin 1s linear infinite;
+}
+@keyframes spin{
+from{
+transform: rotate(0deg);
+}
+to{
+transform: rotate(360deg);
+}
+}
+</style>
+</head>
+<body>
+<div class="loader"></div>
+</body>
+</html>
+Spin - animation name
+1s - one complete rotation takes 1 sec
+Linear - rotates at a constant speed
+Infinite - repeats forever
+Real-world use.
+Example :
+Floating card
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transition & Animations</title>
+<style>
+.card{
+padding:40px;
+background: white;
+box-shadow: 0 10px 20px rgba(0,0,0,.2);
+animation: float 2s ease-in-out infinite alternate;
+}
+@keyframes float{
+from{
+transform:translateY(0);
+}
+to{
+transform: translateY(-20px);
+}
+}
+</style>
+</head>
+<body>
+<div class="card">
+Floating Card
+</div>
+</body>
+</html>
+Animation properties
+Property purpose
+Animation-name keyframes name
+Animation-duration animation time
+Animation-delay delay
+Animation-iteration
+-count number of repeats
+(1,2,infinite)
+Animation-direction normal, reverse,
+alternate, alternate-reverse
+Animation-fill-mode keeps styles before/after
+animation (forwards, backwards, both)
+Animation-play-state running or paused
+Animation-timing-func speed curve(ease,
+liner, etc)
+
+---------- --------------- -------------
+
+___________ _______________ __________________________________________________

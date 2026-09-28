@@ -1,0 +1,275 @@
+HTML Full Document Structure
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learning HTML">
+    <title>My First Web Page</title>
+</head>
+
+<body>
+
+    <h1>Welcome to HTML</h1>
+    <p>This is my first webpage.</p>
+
+</body>
+
+</html>
+
+
+Line-by-Line Explanation
+1. <!DOCTYPE html>
+<!DOCTYPE html>
+Purpose
+Declares that the document is written in HTML5.
+It tells the browser how to interpret the document.
+
+Interview Question
+Q: Why do we use <!DOCTYPE html>?
+Answer:
+It tells the browser to render the page in HTML5 standards mode. Without it, browsers may switch to quirks mode,
+ which can lead to inconsistent rendering.
+
+2. <html>
+<html lang="en">
+Purpose
+Root element of the webpage.
+Everything else is inside it.
+lang="en"
+This specifies that the content is in English.
+Benefits:
+Better accessibility.
+Improved search engine optimization (SEO).
+Helps browsers and screen readers choose the correct pronunciation.
+
+3. <head>
+<head>
+The <head> section contains metadata about the page. This information is used by browsers and search engines
+     but is not displayed as visible page content.
+
+4. <meta charset="UTF-8">
+Purpose
+Specifies the character encoding.
+UTF-8 supports:
+English
+Telugu
+Hindi
+Chinese
+Emojis 😊
+Almost every language
+Without UTF-8, some characters may appear incorrectly.
+
+5. Viewport Meta Tag
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+Purpose
+Makes the webpage responsive.
+Without it:
+Mobile browsers may zoom out.
+Text and layouts can appear too small.
+With it:
+The page scales correctly to the device width.
+
+6. Description Meta Tag
+<meta name="description"
+content="Learning HTML">
+Purpose
+Provides a short description of the webpage.
+Search engines often use this text in search results, which can improve discoverability.
+
+7. <title>
+<title>My Website</title>
+Purpose
+The title appears:
+On the browser tab.
+In bookmarks.
+In search engine results.
+
+8. <body>
+<body>
+Everything visible on the webpage goes inside the <body>.
+Examples:
+Headings
+Paragraphs
+Images
+Tables
+Forms
+Videos
+Buttons
+Basic HTML Elements
+
+Headings
+<h1>Main Heading</h1>
+<h2>Sub Heading</h2>
+<h3>Section</h3>
+<h4>Topic</h4>
+<h5>Small Heading</h5>
+<h6>Smallest Heading</h6>
+
+There are six heading levels:
+h1 is the most important.
+h6 is the least important.
+Interview Tip: A page should generally have one primary h1 describing the main content.
+
+Paragraph
+<p>This is a paragraph.</p>
+Used for regular text.
+
+Line Break
+<br>
+Moves content to the next line.
+
+Horizontal Line
+<hr>
+Creates a thematic break or horizontal line.
+
+Bold
+<strong>Important</strong>
+<strong> indicates that the text is important. Browsers usually display it in bold.
+
+Italic
+<em>Emphasized text</em>
+<em> adds emphasis, often displayed in italics.
+
+Lists
+Unordered List
+<ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+</ul>
+Displays a bulleted list.
+
+Ordered List
+<ol>
+    <li>Wake Up</li>
+    <li>Study</li>
+    <li>Sleep</li>
+</ol>
+Displays a numbered list.
+
+discription List
+<dl>
+    <dt>html</dt>
+    <dd>hyper text markup language</dd>
+
+Links
+<a href="https://www.google.com">
+Google
+</a>
+
+Creates a hyperlink.
+Common Attributes
+href
+Destination URL.
+target="_blank"
+Opens the link in a new tab.
+
+Images
+<img src="profile.jpg"
+alt="Profile Photo"
+width="200">
+Attributes
+src
+Image location.
+alt
+Text description for accessibility and if the image cannot load.
+width
+
+Image width.
+
+
+Tables
+<table border="1">
+
+<tr>
+<th>Name</th>
+<th>Age</th>
+</tr>
+
+<tr>
+<td>Rahul</td>
+<td>22</td>
+</tr>
+
+</table>
+Tags
+table → table container
+tr → row
+th → header cell
+td → data cell
+
+
+
+Forms
+<form>
+
+<label>Name</label>
+<input type="text">
+
+<label>Email</label>
+<input type="email">
+
+<label>Password</label>
+<input type="password">
+
+<button>Submit</button>
+
+</form>
+
+Forms collect user input.
+
+
+Semantic HTML
+
+Semantic tags describe the purpose of the content.
+
+<header></header>
+
+<nav></nav>
+
+<main></main>
+
+<section></section>
+
+<article></article>
+
+<aside></aside>
+
+<footer></footer>
+
+
+Why Use Semantic HTML?
+Easier to read and maintain.
+Better accessibility.
+Better SEO.
+Frequently asked in interviews.
+
+
+HTML Interview Questions
+Question	Answer
+
+What is HTML?	
+HyperText Markup Language used to structure web pages.
+
+Difference between HTML and HTML5?
+	HTML5 introduced semantic elements, multimedia support, improved forms, and new APIs.
+
+What is semantic HTML?	HTML elements that describe the meaning of their content, such as header, main, and footer.
+
+Difference between id and class?
+	id should be unique on a page; class can be reused on multiple elements.
+
+Difference between div and span?
+	div is a block-level container; span is an inline container.
+
+Difference between strong and b?
+	strong conveys importance (semantic); b is only a visual bold style.
+
+Why use the alt attribute?	
+It improves accessibility and provides fallback text if an image cannot be displayed.
+
+What is the purpose of the viewport meta tag?
+	It helps webpages display properly on mobile devices.
